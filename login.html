@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Login Form</title>
+    <script>
+        function validateLogin() {
+            var username = document.getElementById("username").value.trim();
+            var password = document.getElementById("password").value.trim();
+            var error = document.getElementById("error");
+
+            if (username === "" || password === "") {
+                error.textContent = "Username and password are required.";
+                return false;
+            }
+
+            error.textContent = "";
+            alert("Login successful (demo only)");
+            return false; // prevent actual form submission
+        }
+    </script>
+</head>
+<body>
+
+    <h2>Login Form</h2>
+
+    <form onsubmit="return validateLogin()">
+        <label>Username:</label><br>
+        <input type="text" id="username"><br><br>
+
+        <label>Password:</label><br>
+        <input type="password" id="password"><br><br>
+
+        <input type="submit" value="Login"><br><br>
+
+        <p id="error" style="color:red;"></p>
+    </form>
+
+</body>
+</html>
